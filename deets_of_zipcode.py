@@ -4,11 +4,11 @@ from geopy.geocoders import Nominatim
 
 geolocator = Nominatim(user_agent="my-app")
 
-user_zip= int(input("Please enter a zipcode to start a search: "))
-#   zipcode1 ="00912"
+def find_zipcode():
 
-print(f"The given zipcode1 is: {user_zip}\n")
+    user_zip= int(input("Please enter a zipcode to start a search: "))
+    location= geolocator.geocode(user_zip)
+    return  user_zip,location
 
-location= geolocator.geocode(user_zip)
 
-print(location.address)
+print(find_zipcode())
